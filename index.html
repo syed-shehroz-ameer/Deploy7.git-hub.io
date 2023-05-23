@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="time"></p>
+
+    <script>
+
+
+let hour = prompt('Enter hour');
+let mnt  = prompt('Enter minute');
+let scd = prompt('Enter second');
+
+setInterval( () => {
+    
+let myDate = new Date();
+myDate.setHours(hour);
+myDate.setMinutes(mnt);
+myDate.setSeconds(scd);
+
+let result = document.getElementById("time");
+result.innerHTML = myDate.getHours() + ":" + myDate.getMinutes() + ":" +
+myDate.getSeconds(); 
+
+scd++;
+if(scd === 60){
+scd = 0;
+mnt++;
+if(mnt === 60){
+    mnt = 0;
+    hour++;
+    if(hour === 24){
+    hour = 0;
+    }
+}
+}
+},1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
